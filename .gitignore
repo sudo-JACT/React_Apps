@@ -1,21 +1,21 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-*/node_modules
-*/.pnp
-*/.pnp.js
+/to_do_app/node_modules
+/to_do_app/.pnp
+/to_do_app/.pnp.js
 
 # testing
-./*/coverage
+/to_do_app/coverage
 
 # production
-./*/build
+/to_do_app/build
 
 # misc
-*/.DS_Store
-*/.env.local
-*/.env.development.local
-*/.env.test.local
+/to_do_app/.DS_Store
+/to_do_app/.env.local
+/to_do_app/.env.development.local
+/to_do_app/.env.test.local
 */.env.production.local
 
 */npm-debug.log*
