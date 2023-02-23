@@ -1,1 +1,1 @@
-# A collections of my React apps
+# A Collections Of My React Apps
