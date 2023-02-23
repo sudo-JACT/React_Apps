@@ -20,7 +20,7 @@ function Content(){
         {
             id: 3,
             t: "FARE I COMPITI",
-            did: true,
+            did: false,
         },
 
         {
@@ -53,8 +53,8 @@ function Content(){
 
                 <form className="d-flex sl">
 
-                    <input name="input1" id="input1" className="form-control me-2 sl" type="search" placeholder="Task" aria-label="Search"/>
-                    <button className="btn btn-outline-success sl" type="submit">Aggiungi</button>
+                    <input name="input1" id="input1" className="form-control me-2 sl lol" type="search" placeholder="Task" aria-label="Search"/>
+                    <button className="btn btn-outline-lol sl" type="submit">Aggiungi</button>
                     
                 </form>
 

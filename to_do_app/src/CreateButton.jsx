@@ -9,7 +9,7 @@ function CreateButton({task}) {
                 <br />
                 <br />
                 <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                    <input className="form-check-input lol2" type="checkbox" value="" id="flexCheckDefault"/>
                     <label className="form-check-label" for="flexCheckDefault">
                         {task}
                     </label>

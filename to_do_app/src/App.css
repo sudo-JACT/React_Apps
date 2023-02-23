@@ -29,3 +29,53 @@ body{
   align-items: center;
 
 }
+
+.lol{
+
+  color: #ffffff;
+  background-color: #212529;
+  border: var(--bs-border-width) solid #212529;
+
+}
+.lol:enabled{
+
+  color: #ffffff;
+  background-color: #212529;
+  border: var(--bs-border-width) solid #212529;
+
+}
+.lol::placeholder{
+
+  color: #ffffff;
+
+}
+
+.lol2{
+
+  color: #ffffff;
+  background-color: #212529;
+  border: var(--bs-border-width) solid #212529;
+
+}
+.lol2:checked{
+
+  color: #ffffff;
+  background-color: #212529;
+  border: var(--bs-border-width) solid #212529;
+
+}
+
+.btn-outline-lol{
+
+  color: #ffffff;
+  background-color: #212529;
+  border: var(--bs-border-width) solid #212529;
+
+}
+.btn-outline-lol:hover{
+
+  color: #ffffff;
+  background-color: #212529;
+  border: var(--bs-border-width) solid #212529;
+
+}
