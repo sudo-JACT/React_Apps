@@ -1,0 +1,31 @@
+body{
+
+  text-align: center;
+  color: #ffffff;
+  background: #000000;
+  align-items: center;
+
+}
+
+.sm{
+
+  max-width: 20rem;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0;
+  position: absolute;
+  top: auto;
+  left: 50%;
+  transform: translate(-50%);
+  display: inline-block;
+
+}
+
+.sl{
+
+  vertical-align: middle;
+  text-align: center;
+  align-items: center;
+
+}
