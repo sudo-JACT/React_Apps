@@ -1,86 +1,145 @@
 import CreateButton from "./CreateButton";
 import { useState } from "react";
 
-function Content(){
+const Content = () => {
 
-    let [tasks, setTasks] = useState([
-        
-        {
-            id: 1,
-            t: "FARE LA SPESA",
-            did: false,
-        },
+  const [x, setX] = useState(0);
+  const [newTaskText, setNewTaskText] = useState("");
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      text: "FARE I COMPITI",
+      done: false,
+    },
+    {
+      id: 2,
+      text: "SISTEMARE IL LETTO",
+      done: true,
+    },
+  ]);
 
-        {
-            id: 2,
-            t: "LAVARE I PIATTI",
-            did: false,
-        },
+  const onAddBtnClick = (event) => {
+    const newTask = {
+      id: tasks.length,
+      text: newTaskText,
+      done: false,
+    };
 
-        {
-            id: 3,
-            t: "FARE I COMPITI",
-            did: false,
-        },
+    const newTasks = tasks.push(newTask);
+    setTasks([...tasks, newTask]);
+  };
+  const onAddTaskInputChange = (event) => {
+    const value = event.target.value;
+    setNewTaskText(value);
+  };
 
-        {
-            id: 4,
-            t: "TEST",
-            did: true,
-        },
+  const checkIfDone = () =>{
 
-    ]);
 
-    let ntasks = 0;
+  
 
-    for (let i = 0; i < tasks.length; i++) {
+    tasks.map((task) => {
 
-        if (tasks[i].did === false) {
+      if (task.done === false) {
 
-            ntasks++;
+        let y = x + 1;
+        setX(y);
             
-        }
-        
-    }
+      }
 
-    return(
+      return true;
 
-        <>
+    })
 
-            <div className="sm">
-
-                <label>TASK TO COMPLETE: {ntasks}</label>
-
-                <form className="d-flex sl">
-
-                    <input name="input1" id="input1" className="form-control me-2 sl lol" type="search" placeholder="Task" aria-label="Search"/>
-                    <button className="btn btn-outline-lol sl" type="submit">Aggiungi</button>
-                    
-                </form>
-
-                {
-
-                    tasks.map((tt) =>(
-
-                        <CreateButton task={tt.t}/>
-                        
-                    ))
-
-                }
-
-
-            </div>
-
-        
-
-            
-        
-        
-        </>
-
-
-    );
     
+
+  };
+
+  const checK = (event) => {
+
+    const value = event.target.id;
+
+    const newTasks = tasks.map((task) => {
+
+      let task2;
+
+      if (task.id === Number(value)) {
+
+        task2 =  {
+
+          id: task.id,
+          text: task.text,
+          done: true,
+
+        }
+
+        
+      }else{
+
+        task2 = task;
+
+      }
+
+      return task2;
+
+    });
+
+    setTasks(newTasks);
+
+    checkIfDone();
+
+  }
+
+  return (
+    <>
+      {checkIfDone}
+      <div className="sm">
+        <label>TASK TO COMPLETE: {checkIfDone}{x}</label>
+
+        <input name="input1" id="input1" className="form-control me-2 sl lol" type="search" placeholder="Task" aria-label="Search" onChange={onAddTaskInputChange}/>
+        <button className="btn btn-outline-lol sl" onClick={onAddBtnClick}>
+          Aggiungi
+        </button>
+
+        <div id="todo-list-container">
+          {tasks.map((task, i) => {
+
+            if (task.done === true) {
+
+              return(
+               
+                <div id={i}>
+                  <input className="form-check-input lol2" type="checkbox" id={task.id} checked/>
+                  <label className="form-check-label" for="flexCheckDefault">
+                    <s>{task.text}</s>
+                  </label>
+                </div>
+
+              )
+
+            }else{
+
+              return(
+
+                <div id={i}>
+                  <input className="form-check-input lol2" type="checkbox" id={task.id} onClick={checK}/>
+                  <label className="form-check-label" for="flexCheckDefault">
+                    {task.text}
+                  </label>
+                </div>
+
+              )
+
+            }
+          }
+          
+            )
+          
+          }
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Content;

@@ -55,6 +55,7 @@ body{
   color: #ffffff;
   background-color: #212529;
   border: var(--bs-border-width) solid #212529;
+  margin-right: 0.5rem;
 
 }
 .lol2:checked{
@@ -70,6 +71,7 @@ body{
   color: #ffffff;
   background-color: #212529;
   border: var(--bs-border-width) solid #212529;
+  margin: 1rem;
 
 }
 .btn-outline-lol:hover{
