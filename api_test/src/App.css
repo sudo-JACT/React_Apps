@@ -1,0 +1,40 @@
+body{
+
+  background: #000000;
+  color: #ffffff;
+
+}
+
+.lol{
+
+  background-color: var(--bs-body-color);
+  color: #ffffff;
+  border: var(--bs-border-width) solid #000000;
+
+}
+.lol:focus{
+
+  background-color: var(--bs-body-color);
+  color: #ffffff;
+
+}
+
+.cen{
+
+  align-items: center;
+  text-align: center;
+
+}
+
+.sm{
+
+  max-width: 20rem;
+  display: inline-block;
+
+}
+
+.iii{
+
+  margin: 1rem;
+
+}
