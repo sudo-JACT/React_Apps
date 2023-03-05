@@ -1,8 +1,8 @@
 {
-  "name": "jhipster-test",
+  "name": "jhipster-todoapp",
   "version": "0.0.1-SNAPSHOT",
   "private": true,
-  "description": "Description for jhipster_test",
+  "description": "Description for jhipster_todoapp",
   "license": "UNLICENSED",
   "scripts": {
     "app:start": "./mvnw",

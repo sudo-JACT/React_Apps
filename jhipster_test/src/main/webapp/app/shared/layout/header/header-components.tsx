@@ -15,7 +15,7 @@ export const Brand = () => (
   <NavbarBrand tag={Link} to="/" className="brand-logo">
     <BrandIcon />
     <span className="brand-title">
-      <Translate contentKey="global.title">Jhipster_test</Translate>
+      <Translate contentKey="global.title">TO DO APP</Translate>
     </span>
     <span className="navbar-version">{VERSION}</span>
   </NavbarBrand>

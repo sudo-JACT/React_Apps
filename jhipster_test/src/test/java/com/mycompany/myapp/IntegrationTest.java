@@ -1,6 +1,6 @@
 package com.mycompany.myapp;
 
-import com.mycompany.myapp.JhipsterTestApp;
+import com.mycompany.myapp.JhipsterTodoappApp;
 import com.mycompany.myapp.config.AsyncSyncConfiguration;
 import com.mycompany.myapp.config.EmbeddedSQL;
 import java.lang.annotation.ElementType;
@@ -15,7 +15,7 @@ import org.springframework.test.annotation.DirtiesContext;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = { JhipsterTestApp.class, AsyncSyncConfiguration.class })
+@SpringBootTest(classes = { JhipsterTodoappApp.class, AsyncSyncConfiguration.class })
 @EmbeddedSQL
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public @interface IntegrationTest {

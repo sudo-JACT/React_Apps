@@ -31,6 +31,8 @@ a {
     padding: 1rem;
     .card {
       padding: 1rem;
+      background-color: #333333;
+      color: #ffffff;
     }
     .view-routes {
       height: 100%;
@@ -58,8 +60,8 @@ Browser Upgrade Prompt
 
 .browserupgrade {
   margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
+  background: #000000;
+  color: #ffffff;
   padding: 0.2em 0;
 }
 
@@ -310,3 +312,11 @@ http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+td {
+  color: #ffffff !important;
+}
+
+th {
+  color: #ffffff !important;
+}

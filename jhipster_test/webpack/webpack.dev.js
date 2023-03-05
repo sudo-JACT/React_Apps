@@ -96,7 +96,7 @@ module.exports = async options =>
         }
       ),
       new WebpackNotifierPlugin({
-        title: 'Jhipster Test',
+        title: 'Jhipster Todoapp',
         contentImage: path.join(__dirname, 'logo-jhipster.png'),
       }),
     ].filter(Boolean),

@@ -1,8 +1,8 @@
 package com.mycompany.myapp.config;
 
-import java.time.Duration;
-import org.ehcache.config.builders.*;
-import org.ehcache.jsr107.Eh107Configuration;
+import com.github.benmanes.caffeine.jcache.configuration.CaffeineConfiguration;
+import java.util.OptionalLong;
+import java.util.concurrent.TimeUnit;
 import org.hibernate.cache.jcache.ConfigSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
@@ -27,15 +27,13 @@ public class CacheConfiguration {
     private final javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration;
 
     public CacheConfiguration(JHipsterProperties jHipsterProperties) {
-        JHipsterProperties.Cache.Ehcache ehcache = jHipsterProperties.getCache().getEhcache();
+        JHipsterProperties.Cache.Caffeine caffeine = jHipsterProperties.getCache().getCaffeine();
 
-        jcacheConfiguration =
-            Eh107Configuration.fromEhcacheCacheConfiguration(
-                CacheConfigurationBuilder
-                    .newCacheConfigurationBuilder(Object.class, Object.class, ResourcePoolsBuilder.heap(ehcache.getMaxEntries()))
-                    .withExpiry(ExpiryPolicyBuilder.timeToLiveExpiration(Duration.ofSeconds(ehcache.getTimeToLiveSeconds())))
-                    .build()
-            );
+        CaffeineConfiguration<Object, Object> caffeineConfiguration = new CaffeineConfiguration<>();
+        caffeineConfiguration.setMaximumSize(OptionalLong.of(caffeine.getMaxEntries()));
+        caffeineConfiguration.setExpireAfterWrite(OptionalLong.of(TimeUnit.SECONDS.toNanos(caffeine.getTimeToLiveSeconds())));
+        caffeineConfiguration.setStatisticsEnabled(true);
+        jcacheConfiguration = caffeineConfiguration;
     }
 
     @Bean
@@ -51,8 +49,7 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
-            createCache(cm, com.mycompany.myapp.domain.Task.class.getName());
-            // jhipster-needle-ehcache-add-entry
+            // jhipster-needle-caffeine-add-entry
         };
     }
 
