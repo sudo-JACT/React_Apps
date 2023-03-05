@@ -8,9 +8,9 @@ const Footer = () => (
   <div className="footer page-content">
     <Row>
       <Col md="12">
-        <p>
+        <h1>
           <Translate contentKey="footer">Your footer</Translate>
-        </p>
+        </h1>
       </Col>
     </Row>
   </div>
